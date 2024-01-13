@@ -1,0 +1,15 @@
+{
+  "name": "vue-playground-server",
+  "version": "0.1",
+  "description": "server side of vue playground",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "Vladimir Kolchin <kolchin.moon@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  client:
+    image: timbru31/node-alpine-git:14
+    command: sh -c "yarn install && yarn serve"
+    user: ${UID:-1000}:${GID:-1000}
+    volumes: 
+      - ./frontend:/frontend
+    working_dir: /frontend
+    environment:
+      - HOME=/frontend
+    ports:
+      - 80:80
+
+  server:
+    image: timbru31/node-alpine-git:14
+    command: sh -c "yarn install && yarn serve"
+    user: ${UID:-1000}:${GID:-1000}
+    volumes: 
+      - ./backend:/backend
+    working_dir: /backend
+    environment:
+      - HOME=/backend
+    ports:
+      - "8080:8080"
