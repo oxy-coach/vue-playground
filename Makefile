@@ -7,9 +7,12 @@ install:
 	@docker-compose run --rm server sh -c "yarn install"
 	@docker-compose run --rm client sh -c "yarn install"
 
+build:
+	@docker-compose run --rm client sh -c "yarn build"
+
 # запуск фронта и бекенда
 serve:
-	@docker-compose up server
+	@docker-compose up client
 
 # остановка контейнеров
 stop:

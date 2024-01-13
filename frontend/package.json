@@ -1,22 +1,51 @@
 {
   "name": "vue-playground-client",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "client side of vue playground",
   "engines": {
     "node": ">=14"
   },
   "scripts": {
-    "serve": "",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --no-clean",
     "watch": "vue-cli-service build --watch --no-clean"
   },
   "dependencies": {
     "axios": "^1.6.5",
-    "vue": "^2.7",
-    "vue-cli": "^2.9.6",
+    "node-static": "^0.7.11",
+    "core-js": "^3.8.3",
+    "vue": "^2.6.14",
     "vuex": "^4.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
   "author": "Vladimir Kolchin <kolchin.moon@gmail.com>",
   "license": "MIT"
 }

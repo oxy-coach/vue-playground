@@ -3,7 +3,7 @@ version: '3.7'
 services:
   client:
     image: timbru31/node-alpine-git:14
-    command: sh -c "yarn install && yarn serve"
+    command: sh -c "yarn build && yarn serve"
     user: ${UID:-1000}:${GID:-1000}
     volumes: 
       - ./frontend:/frontend
@@ -11,11 +11,18 @@ services:
     environment:
       - HOME=/frontend
     ports:
-      - 80:80
+      - 8080:8080
+    network_mode: host
+    labels:
+      traefik.enable: 'true'
+      traefik.http.routers.vue-playground.entrypoints: web
+      traefik.http.routers.vue-playground.service: vue-playground
+      traefik.http.routers.vue-playground.rule: 'Host(`vue.test`)'
+      traefik.http.services.vue-playground.loadbalancer.server.port: '80'
 
   server:
     image: timbru31/node-alpine-git:14
-    command: sh -c "yarn install && yarn serve"
+    command: sh -c "yarn build && yarn serve"
     user: ${UID:-1000}:${GID:-1000}
     volumes: 
       - ./backend:/backend
