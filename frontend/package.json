@@ -6,7 +6,8 @@
     "node": ">=14"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "node dist/index.js",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build --no-clean",
     "watch": "vue-cli-service build --watch --no-clean"
   },
@@ -15,7 +16,7 @@
     "node-static": "^0.7.11",
     "core-js": "^3.8.3",
     "vue": "^2.6.14",
-    "vuex": "^4.1.0"
+    "vuex": "^3.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

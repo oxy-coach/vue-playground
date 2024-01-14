@@ -1,8 +1,8 @@
 var http = require('http');
 var Static = require('node-static');
 
-// обычный сервер (статика) на порту 80
-var port = 80
+// обычный сервер (статика) на порту 8081
+var port = 8081
 var fileServer = new Static.Server('./dist');
 console.log('server listens to port ' + port)
 http.createServer(function (req, res) {

@@ -10,9 +10,12 @@ install:
 build:
 	@docker-compose run --rm client sh -c "yarn build"
 
+watch:
+	@docker-compose run --rm client sh -c "yarn dev"
+
 # запуск фронта и бекенда
 serve:
-	@docker-compose up client
+	@docker-compose up
 
 # остановка контейнеров
 stop:

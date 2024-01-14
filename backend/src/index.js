@@ -3,10 +3,27 @@ var app = express();
 const { error } = require('node:console');
 const fs = require('node:fs');
 
-const port = 8080;
+const port = 3000;
 const dataFileName = 'data/data.json'
 
 app.use(express.json());
+
+
+// Add headers before the routes are defined
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://vue.test');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Pass to next layer of middleware
+    next();
+});
 
 app.get('/', function (req, res) {
     res.json({"msg":"welcome to server"});

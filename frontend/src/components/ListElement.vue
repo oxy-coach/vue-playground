@@ -26,10 +26,34 @@ export default {
     },
     mounted () {
         this.localText = this.text
+    },
+    watch: {
+        text() {
+            // отслеживаем последующие изменения от родителя
+            this.localText = this.text
+        }
     }
 }
 </script>
 
 <style lang="css">
+
+.list-element {
+    display: flex;
+    margin: 5px 0 5px;
+}
+
+.list-element input {
+    width: 250px;
+    margin-right: 20px;
+    font-size: 15px;
+    padding: 5px 5px 5px 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.list-element .remove-btn {
+    background-color: red;
+}
 
 </style>
